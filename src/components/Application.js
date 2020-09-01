@@ -21,6 +21,53 @@ export default function Application(props) {
     },
   ];
 
+  const appointments = [
+    {
+      id: 1,
+      time: "12pm",
+    },
+    {
+      id: 2,
+      time: "1pm",
+      interview: {
+        student: "Lydia Miller-Jones",
+        interviewer: {
+          id: 1,
+          name: "Sylvia Palmer",
+          avatar: "https://i.imgur.com/LpaY82x.png",
+        },
+      },
+    },
+    {
+      id: 3,
+      time: "2pm",
+    },
+    {
+      id: 4,
+      time: "3pm",
+      interview: {
+        student: "TarvDawg",
+        interviewer: {
+          id: 1,
+          name: "Sylvia Palmer",
+          avatar: "https://i.imgur.com/LpaY82x.png",
+        },
+      },
+    },
+    {
+      id: 5,
+      time: "5pm",
+      interview: {
+        student: "TarvDawg",
+        interviewer: {
+          id: 1,
+          name: "Sylvia Palmer",
+          avatar: "https://i.imgur.com/LpaY82x.png",
+        },
+      },
+    },
+  ];
+
   const [day, setDay] = useState("Monday");
   return (
     <main className="layout">
