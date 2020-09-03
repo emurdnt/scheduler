@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
-import getAppointmentsForDay from "helpers/selectors";
+import {
+  getAppointmentsForDay,
+  getInterview,
+  getInterviewersForDay,
+} from "helpers/selectors";
 import "components/Application.scss";
 
 export default function Application(props) {
@@ -35,6 +39,7 @@ export default function Application(props) {
   console.log("interviewers", state.interviewers);
 
   const apptArray = getAppointmentsForDay(state, state.day);
+  const interviewersArray = getInterviewersForDay(state, state.day);
   const schedule = apptArray.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
     return (
@@ -42,6 +47,7 @@ export default function Application(props) {
         key={appointment.id}
         interview={interview}
         {...appointment}
+        interviewers={interviewersArray}
       />
     );
   });
@@ -64,7 +70,9 @@ export default function Application(props) {
           alt="Lighthouse Labs"
         />
       </section>
-      <section className="schedule">{schedule}</section>
+      <section className="schedule">
+        {schedule} <Appointment key="last" time="5pm" />
+      </section>
     </main>
   );
 }
