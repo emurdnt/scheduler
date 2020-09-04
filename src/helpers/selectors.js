@@ -14,7 +14,9 @@ export function getAppointmentsForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
+  // console.log("from getInterview", state);
   if (interview) {
+    console.log("front interview:19", state);
     const interviewObj = {
       student: interview.student,
       interviewer: {
