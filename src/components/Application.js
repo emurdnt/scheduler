@@ -61,20 +61,24 @@ export default function Application(props) {
       })
       .catch((error) => console.log(error));
   };
-
+  console.log("interviewers", state.interviewers);
   const apptArray = getAppointmentsForDay(state, state.day);
   const interviewersArray = getInterviewersForDay(state, state.day);
   const schedule = apptArray.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
-    return (
-      <Appointment
-        key={appointment.id}
-        interview={interview}
-        {...appointment}
-        interviewers={interviewersArray}
-        bookInterview={bookInterview}
-      />
-    );
+    if (interview) {
+      return (
+        <Appointment
+          key={appointment.id}
+          interview={interview}
+          {...appointment}
+          interviewers={interviewersArray}
+          bookInterview={bookInterview}
+        />
+      );
+    } else {
+      console.log("null");
+    }
   });
 
   return (

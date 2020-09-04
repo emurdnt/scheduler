@@ -25,6 +25,7 @@ export function getInterview(state, interview) {
         avatar: state.interviewers[interview.interviewer].avatar,
       },
     };
+    // console.log("from selector", interviewObj);
     return interviewObj;
   }
   return null;

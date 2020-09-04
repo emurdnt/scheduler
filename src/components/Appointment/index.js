@@ -15,7 +15,7 @@ const SAVING = "SAVING";
 const ERROR = "ERROR";
 
 export default function Appointment(props) {
-  // console.log("index", props);
+  console.log("index", props);
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -57,7 +57,7 @@ export default function Appointment(props) {
           onSave={onSave}
         />
       )}
-      {mode === SAVING && <Status message={"Saving..."} />}
+      {mode === SAVING && <Status message={"Saving"} />}
     </article>
   );
 }
