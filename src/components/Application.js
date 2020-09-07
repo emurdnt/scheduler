@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import useApplicationData from "../hooks/useApplicationData";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 import {
@@ -10,77 +10,32 @@ import {
 import "components/Application.scss";
 
 export default function Application(props) {
-  const [state, setState] = useState({
-    day: "Monday",
-    days: [],
-    appointments: {},
-    interviewers: {},
-  });
+  const {
+    state,
+    setDay,
+    bookInterview,
+    cancelInterview,
+  } = useApplicationData();
 
-  const daysPromise = axios.get("/api/days");
-  const interviewPromise = axios.get("/api/appointments");
-  const interviewersPromise = axios.get("/api/interviewers");
-
-  const setDay = (day) => setState({ ...state, day });
-
-  useEffect(() => {
-    Promise.all([daysPromise, interviewPromise, interviewersPromise]).then(
-      (all) => {
-        let [days, appointments, interviewers] = all;
-        days = days.data;
-        appointments = appointments.data;
-        interviewers = interviewers.data;
-
-        setState((prev) => ({ ...prev, days, appointments, interviewers }));
-      }
-    );
-  }, []);
-
-  const bookInterview = (id, interview) => {
-    const appointment = {
-      ...state.appointments[id],
-      interview: { ...interview },
-    };
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment,
-    };
-
-    setState({
-      ...state,
-      appointments,
-    });
-    console.log(appointments);
-    return axios
-      .put(`/api/appointments/${id}`, { interview })
-      .then((response) => {
-        setState({
-          ...state,
-          appointments,
-        });
-      })
-      .catch((error) => console.log(error));
-  };
-  console.log("interviewers", state.interviewers);
   const apptArray = getAppointmentsForDay(state, state.day);
   const interviewersArray = getInterviewersForDay(state, state.day);
   const schedule = apptArray.map((appointment) => {
-    const interview = getInterview(state, appointment.interview);
-    if (interview) {
-      return (
-        <Appointment
-          key={appointment.id}
-          interview={interview}
-          {...appointment}
-          interviewers={interviewersArray}
-          bookInterview={bookInterview}
-        />
-      );
-    } else {
-      console.log("null");
-    }
+    const interviewRes = getInterview(state, appointment.interview);
+
+    return (
+      <Appointment
+        key={appointment.id}
+        interview={interviewRes}
+        id={appointment.id}
+        time={appointment.time}
+        interviewers={interviewersArray}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
+      />
+    );
   });
 
+  // console.log(spotsRemaining(1));
   return (
     <main className="layout">
       <section className="sidebar">
