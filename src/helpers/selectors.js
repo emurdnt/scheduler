@@ -14,21 +14,17 @@ export function getAppointmentsForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
-  // console.log("from getInterview", state);
-  if (interview) {
-    console.log("front interview:19", state);
-    const interviewObj = {
-      student: interview.student,
-      interviewer: {
-        id: state.interviewers[interview.interviewer].id,
-        name: state.interviewers[interview.interviewer].name,
-        avatar: state.interviewers[interview.interviewer].avatar,
-      },
-    };
-    // console.log("from selector", interviewObj);
-    return interviewObj;
+  let result = {};
+  for (let intObj in state.interviewers) {
+    if (interview && state.interviewers[intObj].id === interview.interviewer) {
+      result.student = interview.student;
+      result.interviewer = state.interviewers[intObj];
+    }
   }
-  return null;
+  if (!Object.keys(result).length) {
+    return null;
+  }
+  return result;
 }
 
 export function getInterviewersForDay(state, day) {
@@ -46,4 +42,28 @@ export function getInterviewersForDay(state, day) {
   }
   console.log(interviewers);
   return interviewers;
+}
+
+export function updateSpotsRemaining(state, appointments) {
+  let currentDayObj;
+  for (let day of state.days) {
+    if (day.name === state.day) {
+      currentDayObj = day;
+    }
+  }
+  const apptsByDay = currentDayObj.appointments;
+  let spotsFilled = 0;
+  for (let appt of apptsByDay) {
+    if (appointments[appt].interview) {
+      spotsFilled++;
+    }
+  }
+  let days = [];
+  for (let day of state.days) {
+    if (day.name === state.day) {
+      day.spots = 5 - spotsFilled;
+    }
+    days.push(day);
+  }
+  return days;
 }
