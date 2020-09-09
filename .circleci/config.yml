@@ -33,7 +33,7 @@ jobs:
           name: Push Master to Production
           command: |
             git push https://github.com/emurdnt/scheduler.git
-            master:production
+master:production
 workflows:
   version: 2
   test_and_deploy:
