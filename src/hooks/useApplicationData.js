@@ -32,6 +32,7 @@ export default function useApplicationData(initial) {
   }, []);
 
   const bookInterview = (id, interview) => {
+    console.log("from book", interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
@@ -43,14 +44,17 @@ export default function useApplicationData(initial) {
 
     return axios
       .put(`/api/appointments/${id}`, { interview })
-      .then((response) => {
-        const days = updateSpotsRemaining(state, appointments);
-
-        setState({
-          ...state,
-          appointments,
-          days,
-        });
+      .then((response, reject) => {
+        if (interview.interviewer !== null) {
+          const days = updateSpotsRemaining(state, appointments);
+          setState({
+            ...state,
+            appointments,
+            days,
+          });
+        } else {
+          throw new Error("Interviewer Empty");
+        }
       });
   };
 
