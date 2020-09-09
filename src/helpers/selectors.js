@@ -46,9 +46,11 @@ export function getInterviewersForDay(state, day) {
 
 export function updateSpotsRemaining(state, appointments) {
   let currentDayObj;
+  let daySpots = 0;
   for (let day of state.days) {
     if (day.name === state.day) {
       currentDayObj = day;
+      daySpots = day.appointments.length;
     }
   }
   const apptsByDay = currentDayObj.appointments;
@@ -61,7 +63,7 @@ export function updateSpotsRemaining(state, appointments) {
   let days = [];
   for (let day of state.days) {
     if (day.name === state.day) {
-      day.spots = 5 - spotsFilled;
+      day.spots = daySpots - spotsFilled;
     }
     days.push(day);
   }
