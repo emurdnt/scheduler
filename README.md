@@ -10,6 +10,7 @@ Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.
 ## Screenshots
 The appointments section on the app is made up of various components that render depending on the state.
 !["Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
+!["Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
 !["Hovering on a day that has empty appointment spots."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png)
 !["Clicking the plus on the screen will show a form that the use will fill-up for an appointment."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-add.png)
 !["An edit and delete button will show when a user hovers over a booked appointment. A confirmation message appears before an appointment is deleted."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-delete.png)
@@ -17,4 +18,3 @@ The appointments section on the app is made up of various components that render
 
 ---
 
-## Dependencies 
