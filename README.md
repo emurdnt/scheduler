@@ -12,7 +12,7 @@ The appointments section on the app is made up of various components that render
 
 ![Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments.](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
 
-![Hovering on a day that has empty appointment spots.](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png)
+
 
 ![Clicking the plus on the screen will show a form that the use will fill-up for an appointment.](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-add.png)
 
