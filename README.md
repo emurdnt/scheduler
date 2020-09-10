@@ -12,7 +12,7 @@ PGUSER=development
 PGDATABASE=scheduler_development
 PGPASSWORD=development
 PGPORT=5432
-
+```
 ---
 ## Screenshots
 The appointments section on the app is made up of various components that render depending on the state.
