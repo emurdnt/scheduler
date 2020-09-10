@@ -1,23 +1,16 @@
 # Interview Scheduler
 
-## Setup
+This is a scheduler where the user can book an appointment. There are 5 appointment slots for each day (Monday-Friday). An appointment can be edited or cancelled if the user wants to. This project is built on **React** and **PostGres SQL**. 
 
-Install dependencies with `npm install`.
+The app is currently deployed on **Netlify** with the backend in **Heroku**. I have also used **CircleCI** to run the tests before the project is deployed to production.
 
-## Running Webpack Development Server
+Visit the app here:[Link](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.netlify.app/)
 
-```sh
-npm start
-```
 
-## Running Jest Test Framework
-
-```sh
-npm test
-```
-
-## Running Storybook Visual Testbed
-
-```sh
-npm run storybook
-```
+## Screenshots
+The appointments section on the app is made up of various components that render depending on the state.
+!["Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
+!["Hovering on a day that isn't full."](ttps://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png)
+!["Clicking the (+) on the screen will show a form that the use will fill-up for an appointment."](ttps://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-add.png)
+!["An edit and delete button will show when a user hovers over a booked appointment. A confirmation message appears before an appointment is deleted."](ttps://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-delete.png)
+!["A day cannot be selected when all the appointment spots have been booked."](ttps://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-full.png)
