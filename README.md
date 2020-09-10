@@ -6,6 +6,13 @@ The app is currently deployed on **Netlify** with the backend in **Heroku**. I h
 
 Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.netlify.app).
 
+The .env file is using Heroku for the deployed project. Use these configurations to connect to the local server:
+```PGHOST=localhost
+PGUSER=development
+PGDATABASE=scheduler_development
+PGPASSWORD=development
+PGPORT=5432
+
 ---
 ## Screenshots
 The appointments section on the app is made up of various components that render depending on the state.
