@@ -8,8 +8,7 @@ Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.
 
 ---
 ## Screenshots
-The appointments section on the app is made up of various components that render depending on the state.
-!["hewding"](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png)
+
 
 !["Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
 
@@ -21,5 +20,4 @@ The appointments section on the app is made up of various components that render
 
 !["A day cannot be selected when all the appointment spots have been booked."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-full.png)
 
----
 
