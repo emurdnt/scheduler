@@ -10,5 +10,5 @@ Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.
 ## Screenshots
 The appointments section on the app is made up of various components that render depending on the state.
 
-![This is a alt text.](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png"This is an image")
+![This is a alt text.](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png "This is an image")
 
