@@ -24,15 +24,12 @@ export default function useApplicationData(initial) {
         appointments = appointments.data;
         interviewers = interviewers.data;
 
-        console.log("from use effect", days, appointments, interviewers);
-
         setState((prev) => ({ ...prev, days, appointments, interviewers }));
       }
     );
   }, []);
 
   const bookInterview = (id, interview) => {
-    console.log("from book", interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },

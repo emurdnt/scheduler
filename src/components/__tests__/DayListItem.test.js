@@ -102,7 +102,6 @@ it("loads data, edits an interview and keeps the spots remaining for Monday the 
 
   // 6. Check that the element with the text "Deleting" is displayed.
   expect(getByText(appointment, "Saving")).toBeInTheDocument();
-  // console.log(prettyDOM(appointment));
 
   // 7. Wait until the element with the "Add" button is displayed.
   await waitForElement(() => queryByText(appointment, "Lydia Miller-Jones"));
