@@ -4,12 +4,11 @@ This is a scheduler where the user can book an appointment. There are 5 appointm
 
 The app is currently deployed on **Netlify** with the backend in **Heroku**. I have also used **CircleCI** to run the tests before the project is deployed to production.
 
-Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.netlify.app/).
+Visit the app [here](https://5f597d21f9c9a40007de331c--blissful-lovelace-3f565a.netlify.app).
 
 ---
 ## Screenshots
-
-
+The appointments section on the app is made up of various components that render depending on the state.
 !["Empty view of the scheduler. The days are on the left side while the right is occupied by the appointments."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-empty.png)
 
 !["Hovering on a day that has empty appointment spots."](https://raw.githubusercontent.com/emurdnt/scheduler/master/docs/scheduler-hover.png)
