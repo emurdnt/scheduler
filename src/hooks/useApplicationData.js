@@ -45,16 +45,12 @@ export default function useApplicationData(initial) {
     return axios
       .put(`/api/appointments/${id}`, { interview })
       .then((response, reject) => {
-        if (interview.interviewer !== null) {
-          const days = updateSpotsRemaining(state, appointments);
-          setState({
-            ...state,
-            appointments,
-            days,
-          });
-        } else {
-          throw new Error("Interviewer Empty");
-        }
+        const days = updateSpotsRemaining(state, appointments);
+        setState({
+          ...state,
+          appointments,
+          days,
+        });
       });
   };
 
