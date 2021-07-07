@@ -35,7 +35,6 @@ export default function Application(props) {
     );
   });
 
-  // console.log(spotsRemaining(1));
   return (
     <main className="layout">
       <section className="sidebar">

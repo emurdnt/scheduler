@@ -1,3 +1,9 @@
+/**
+ * A helper to get all the appointments of the day.
+ * @param {object} state
+ * @param {string} day
+ * @returns {array}
+ */
 export function getAppointmentsForDay(state, day) {
   const arr = state.days
     .filter((dayOfWeek) => dayOfWeek.name === day)
@@ -13,6 +19,13 @@ export function getAppointmentsForDay(state, day) {
   return appointments;
 }
 
+/**
+ * A helper to create a new object with the 2 parameters.
+ * @param {object} state
+ * @param {object} interview
+ * @returns {object}
+ */
+
 export function getInterview(state, interview) {
   let result = {};
   for (let intObj in state.interviewers) {
@@ -26,9 +39,13 @@ export function getInterview(state, interview) {
   }
   return result;
 }
-
+/**
+ * A helper function that returns the interviewers for the day.
+ * @param {object} state
+ * @param {string} day
+ * @returns {array}
+ */
 export function getInterviewersForDay(state, day) {
-  // console.log("interviewers", state);
   const arr = state.days
     .filter((dayOfWeek) => dayOfWeek.name === day)
     .map((obj) => {
@@ -40,9 +57,16 @@ export function getInterviewersForDay(state, day) {
   for (let data of arr) {
     interviewers.push(state.interviewers[data]);
   }
-  console.log(interviewers);
   return interviewers;
 }
+
+/**
+ * A helper function to update the spots remaining by taking in the state object
+ * and the new appointments object.
+ * @param {object} state
+ * @param {object} appointments
+ * @returns {object}
+ */
 
 export function updateSpotsRemaining(state, appointments) {
   let currentDayObj;
